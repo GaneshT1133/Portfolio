@@ -1,0 +1,96 @@
+<div class="page" id="home">
+  <div class="background-orb orb-left"></div>
+  <div class="background-orb orb-right"></div>
+
+  <header class="top-nav section reveal">
+    <p class="brand">GANESH TODKAR</p>
+    <nav aria-label="Main">
+      <ul>
+        @for (item of navItems; track item.label) {
+          <li><a [href]="item.anchor">{{ item.label }}</a></li>
+        }
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section">
+      <div class="hero-content reveal" style="--reveal-delay: 70ms;">
+        <p class="eyebrow">JAVA FULL STACK DEVELOPER + AWS</p>
+        <h1>Calm Design. Serious Engineering.</h1>
+        <p class="subtitle">
+          I build reliable Java microservices and cloud-native systems with measurable business impact.
+          Delivered 50% cloud cost reduction by refactoring inefficient cross-account Lambda workflows.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="/Ganesh_Todkar_Resume.pdf" target="_blank" rel="noopener">Download CV</a>
+        </div>
+      </div>
+
+      <aside class="architecture-card reveal" style="--reveal-delay: 150ms;" aria-label="Architecture Snapshot">
+        <p class="card-title">ARCHITECTURE SNAPSHOT</p>
+        <div class="chip-grid">
+          @for (chip of architectureStack; track chip) {
+            <span class="chip">{{ chip }}</span>
+          }
+        </div>
+        <p class="impact-banner">Impact Highlight: 50% Cloud Cost Optimization</p>
+      </aside>
+    </section>
+
+    <section class="highlights section">
+      @for (item of highlights; track item.title) {
+        <article class="panel reveal" [style.--reveal-delay]="(120 + ($index * 70)) + 'ms'">
+          <p class="panel-title">{{ item.title }}</p>
+          <p class="panel-value">{{ item.value }}</p>
+        </article>
+      }
+    </section>
+
+    <section class="projects section reveal" id="projects">
+      <p class="eyebrow">FEATURED PROJECTS</p>
+      <h2>Focused case studies, clear outcomes</h2>
+
+      <div class="project-grid">
+        @for (project of projects; track project.name) {
+          <article class="project-card reveal" [style.--reveal-delay]="(110 + ($index * 90)) + 'ms'">
+            <h3>{{ project.name }}</h3>
+            <p class="stack">{{ project.stack }}</p>
+            <p class="summary">{{ project.summary }}</p>
+            <p class="impact">{{ project.impact }}</p>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section class="timeline section reveal" id="timeline">
+      <p class="eyebrow">CAREER TIMELINE</p>
+      <div class="timeline-list">
+        <article class="timeline-item reveal" style="--reveal-delay: 80ms;">
+          <h3>NICE Interactive Solutions</h3>
+          <p>Software Engineer | Feb 2025 - Present</p>
+        </article>
+        <article class="timeline-item reveal" style="--reveal-delay: 140ms;">
+          <h3>Wipro Technologies</h3>
+          <p>Project Engineer | Sep 2022 - Oct 2024</p>
+        </article>
+        <article class="timeline-item reveal" style="--reveal-delay: 200ms;">
+          <h3>AWS Certified Cloud Practitioner</h3>
+          <p>Cloud-first distributed architecture mindset</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="contact section reveal" id="contact">
+    <h2>Let us build reliable systems at scale.</h2>
+    <p>
+      <a href="mailto:gstodkar01@gmail.com">gstodkar01&#64;gmail.com</a>
+      <span>|</span>
+      <a href="https://linkedin.com/in/ganeshtodkar" target="_blank" rel="noopener">linkedin.com/in/ganeshtodkar</a>
+      <span>|</span>
+      <a href="tel:+917263849596">+91 7263849596</a>
+    </p>
+  </footer>
+</div>
