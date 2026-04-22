@@ -5,8 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "npm run build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy:cf": "npm run build && npx wrangler pages deploy dist/ganesh-portfolio/browser --project-name portfolio"
   },
   "private": true,
   "dependencies": {

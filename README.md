@@ -28,6 +28,8 @@ Build output: `dist/ganesh-portfolio/browser`
    - Build output directory: `dist/ganesh-portfolio/browser`
 4. Deploy.
 
+For full steps (UI + CLI), see [DEPLOYMENT.md](./DEPLOYMENT.md).
+
 ## Deploy Free (Vercel)
 
 1. Import GitHub repo in Vercel.
@@ -41,3 +43,4 @@ Build output: `dist/ganesh-portfolio/browser`
 
 - Resume download file is served from `public/Ganesh_Todkar_Resume.pdf`.
 - Main portfolio UI is in `src/app/app.component.html` and `src/app/app.component.scss`.
+- `wrangler.toml` is included for Cloudflare Pages CLI deployments.
