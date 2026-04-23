@@ -1,0 +1,15 @@
+<section class="projects section" id="projects" appReveal>
+  <p class="eyebrow">FEATURED PROJECTS</p>
+  <h2>Focused case studies, clear outcomes</h2>
+
+  <div class="project-grid">
+    @for (project of items; track project.name) {
+      <article class="project-card" appReveal [revealDelay]="100 + ($index * 90)">
+        <h3>{{ project.name }}</h3>
+        <p class="stack">{{ project.stack }}</p>
+        <p class="summary">{{ project.summary }}</p>
+        <p class="impact">{{ project.impact }}</p>
+      </article>
+    }
+  </div>
+</section>

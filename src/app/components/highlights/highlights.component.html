@@ -1,0 +1,8 @@
+<section class="highlights section">
+  @for (item of items; track item.title) {
+    <article class="panel" appReveal [revealDelay]="100 + ($index * 60)">
+      <p class="panel-title">{{ item.title }}</p>
+      <p class="panel-value">{{ item.value }}</p>
+    </article>
+  }
+</section>

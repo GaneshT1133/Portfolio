@@ -1,0 +1,12 @@
+<section class="timeline section" id="timeline" appReveal>
+  <p class="eyebrow">CAREER TIMELINE</p>
+
+  <div class="timeline-list">
+    @for (item of items; track item.title) {
+      <article class="timeline-item" appReveal [revealDelay]="80 + ($index * 60)">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.detail }}</p>
+      </article>
+    }
+  </div>
+</section>

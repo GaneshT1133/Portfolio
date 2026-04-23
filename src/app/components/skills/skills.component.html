@@ -1,0 +1,21 @@
+<section class="skills-wrap" id="skills">
+  <div class="skills section">
+    <div class="skills-title" appReveal>
+      <p>SKILLS</p>
+      <div class="title-line"></div>
+    </div>
+
+    <div class="skills-grid">
+      @for (category of categories; track category.title) {
+        <article class="skill-card" appReveal [revealDelay]="100 + ($index * 70)">
+          <h3>{{ category.title }}</h3>
+          <ul>
+            @for (skill of category.items; track skill) {
+              <li>{{ skill }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </div>
+</section>

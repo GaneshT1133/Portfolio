@@ -1,0 +1,13 @@
+<section class="hero section" id="home">
+  <div class="hero-content" appReveal [revealDelay]="70">
+    <p class="eyebrow">{{ content.eyebrow }}</p>
+    <h1>{{ content.headline }}</h1>
+    <p class="subtitle">{{ content.summary }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" [href]="content.primaryActionAnchor">{{ content.primaryActionLabel }}</a>
+      <a class="btn btn-secondary" [href]="content.secondaryActionUrl" target="_blank" rel="noopener">
+        {{ content.secondaryActionLabel }}
+      </a>
+    </div>
+  </div>
+</section>

@@ -21,3 +21,4 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1')?.textContent).toContain('Calm Design');
   });
 });
+

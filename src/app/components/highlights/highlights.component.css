@@ -1,0 +1,40 @@
+.highlights {
+  margin-top: 2.4rem;
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.panel {
+  border-radius: 1rem;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.96);
+  padding: 1.2rem;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.panel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(123, 160, 195, 0.15);
+  border-color: #c5d7e8;
+}
+
+.panel-title {
+  margin: 0;
+  color: #587691;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+.panel-value {
+  margin: 0.8rem 0 0;
+  font-size: clamp(1.2rem, 2vw, 1.9rem);
+}
+
+@media (max-width: 1080px) {
+  .highlights {
+    grid-template-columns: 1fr;
+  }
+}
+

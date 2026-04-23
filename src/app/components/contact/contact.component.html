@@ -1,0 +1,10 @@
+<footer class="contact section" id="contact" appReveal>
+  <h2>{{ content.heading }}</h2>
+  <p>
+    <a [href]="'mailto:' + content.email">{{ content.email }}</a>
+    <span>|</span>
+    <a [href]="content.linkedinUrl" target="_blank" rel="noopener">{{ content.linkedinLabel }}</a>
+    <span>|</span>
+    <a [href]="'tel:' + content.phone">{{ content.phone }}</a>
+  </p>
+</footer>

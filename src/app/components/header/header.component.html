@@ -1,0 +1,10 @@
+<header class="top-nav section" appReveal>
+  <p class="brand">{{ brandName }}</p>
+  <nav aria-label="Main">
+    <ul>
+      @for (item of navItems; track item.label) {
+        <li><a [href]="item.anchor">{{ item.label }}</a></li>
+      }
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,39 @@
+:host {
+  display: block;
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: clip;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(55, 193, 225, 0.25), transparent 22%),
+    radial-gradient(circle at 84% 20%, rgba(104, 155, 255, 0.2), transparent 24%),
+    #f4f7fb;
+  padding-bottom: 3rem;
+}
+
+.background-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.orb-left {
+  width: 18rem;
+  height: 18rem;
+  background: rgba(39, 192, 216, 0.28);
+  top: 11rem;
+  left: -4rem;
+}
+
+.orb-right {
+  width: 22rem;
+  height: 22rem;
+  background: rgba(82, 148, 255, 0.24);
+  top: 6rem;
+  right: -5rem;
+}
+
