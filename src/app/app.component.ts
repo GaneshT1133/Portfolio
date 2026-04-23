@@ -6,6 +6,7 @@ import { HighlightsComponent } from './components/highlights/highlights.componen
 import { ProjectsComponent } from './components/projects/projects.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
+import { CursorDirective } from './directives/cursor.directive';
 import {
   CONTACT_CONTENT,
   HERO_CONTENT,
@@ -26,7 +27,8 @@ import {
     HighlightsComponent,
     ProjectsComponent,
     TimelineComponent,
-    ContactComponent
+    ContactComponent,
+    CursorDirective
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
