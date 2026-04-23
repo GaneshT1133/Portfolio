@@ -3,10 +3,15 @@
   <div class="background-orb orb-right"></div>
 
   <app-header [brandName]="brandName" [navItems]="navItems"></app-header>
+  
   <app-hero [content]="heroContent"></app-hero>
-  <app-skills [categories]="skillCategories"></app-skills>
-  <app-highlights [items]="highlights"></app-highlights>
-  <app-projects [items]="projects"></app-projects>
+  
+  <!-- "About" section equivalent -->
   <app-timeline [items]="timeline"></app-timeline>
+  
+  <app-projects [items]="projects"></app-projects>
+  
+  <app-skills [categories]="skillCategories"></app-skills>
+  
   <app-contact [content]="contact"></app-contact>
 </div>
