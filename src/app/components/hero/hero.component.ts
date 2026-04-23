@@ -1,14 +1,11 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { HeroContent } from '../../models/portfolio.models';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RevealDirective } from '../../directives/reveal.directive';
-import { TiltDirective } from '../../directives/tilt.directive';
-
 import { HERO_CONTENT } from '../../data/portfolio.data';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [RevealDirective, TiltDirective],
+  imports: [RevealDirective],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -16,4 +13,3 @@ import { HERO_CONTENT } from '../../data/portfolio.data';
 export class HeroComponent {
   content = HERO_CONTENT;
 }
-

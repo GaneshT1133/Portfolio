@@ -28,8 +28,12 @@ body {
     Helvetica,
     Arial,
     sans-serif;
-  color: #132a40;
-  background-color: #f8fbff;
+  color: #fff;
+  background-color: #0b0b0b;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden; /* No native scroll as requested */
