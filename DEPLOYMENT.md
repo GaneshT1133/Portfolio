@@ -1,40 +1,34 @@
 # Deployment Guide
 
-## Cloudflare Pages (GitHub Auto Deploy)
+## GitHub Pages
 
-1. Open Cloudflare dashboard and go to `Workers & Pages`.
-2. Create a new `Pages` project from GitHub.
-3. Select repository: `GaneshT1133/Portfolio`.
-4. Configure build:
-   - Build command: `npm run build`
-   - Build output directory: `dist/ganesh-portfolio/browser`
-   - Root directory: (leave empty)
-5. Deploy.
+This repo is set up for project-site deployment at:
 
-If needed, set environment variable:
+`https://ganesht1133.github.io/Portfolio/`
 
-- `NODE_VERSION=22`
+### One-time setup
 
-## Cloudflare Pages (CLI Deploy)
+1. In GitHub repo `Settings` -> `Pages`.
+2. Under `Build and deployment`, choose `Source: Deploy from a branch`.
+3. Branch: `gh-pages` and folder: `/ (root)`.
+4. Save.
 
-Use this for manual deployments:
+### Deploy command
 
 ```bash
-npm run deploy:cf
+npm run deploy:ghpages
 ```
 
-This script:
+This command:
 
-1. Builds Angular production output
-2. Deploys `dist/ganesh-portfolio/browser` to Cloudflare Pages project `portfolio`
+1. Builds Angular with `--base-href "/Portfolio/"`
+2. Publishes `dist/ganesh-portfolio/browser` to branch `gh-pages`
 
-If your Cloudflare Pages project name is different, update:
+### Update workflow
 
-- `package.json` script `deploy:cf`
-- `wrangler.toml` value `name`
-
-## First-time CLI Auth (one-time)
+After code changes:
 
 ```bash
-npx wrangler login
+git push origin main
+npm run deploy:ghpages
 ```

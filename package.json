@@ -5,10 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:prod": "npm run build",
+    "build:ghpages": "ng build --base-href \"/Portfolio/\"",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy:cf": "npm run build && npx wrangler pages deploy dist/ganesh-portfolio/browser --project-name portfolio"
+    "deploy:ghpages": "npm run build:ghpages && npx angular-cli-ghpages --dir=dist/ganesh-portfolio/browser"
   },
   "private": true,
   "dependencies": {
