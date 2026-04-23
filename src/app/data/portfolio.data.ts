@@ -50,19 +50,37 @@ export const SKILL_CATEGORIES: readonly SkillCategory[] = [
     ]
   },
   {
-    title: 'Deployment',
+    title: 'DevOps',
     items: [
-      { name: 'AWS',     iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' },
-      { name: 'Docker',  iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-      { name: 'Jenkins', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg' },
-      { name: 'Linux',   iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' }
+      { name: 'AWS',        iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' },
+      { name: 'ECS',        iconUrl: 'https://api.iconify.design/logos:aws-ecs.svg' },
+      { name: 'Docker',     iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+      { name: 'Jenkins',    iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg' },
+      { name: 'Kubernetes', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg' }
+    ]
+  },
+  {
+    title: 'Database',
+    items: [
+      { name: 'MySQL',    iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+      { name: 'DynamoDB', iconUrl: 'https://api.iconify.design/logos:aws-dynamodb.svg' }
     ]
   },
   {
     title: 'Version Control',
     items: [
-      { name: 'Git',    iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-      { name: 'GitHub', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' }
+      { name: 'Git',       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+      { name: 'GitHub',    iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
+      { name: 'Bitbucket', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg' }
+    ]
+  },
+  {
+    title: 'AI',
+    items: [
+      { name: 'ChatGPT',     iconUrl: 'https://api.iconify.design/logos:openai-icon.svg' },
+      { name: 'Claude',      iconUrl: 'https://api.iconify.design/fluent-emoji-flat:robot.svg' },
+      { name: 'Antigravity', iconUrl: 'https://api.iconify.design/fluent-emoji-flat:rocket.svg' },
+      { name: 'Codex',       iconUrl: 'https://api.iconify.design/fluent-emoji-flat:brain.svg' }
     ]
   },
   {
