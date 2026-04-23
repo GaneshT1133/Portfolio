@@ -1,12 +1,22 @@
-<section class="timeline section" id="timeline" appReveal>
-  <p class="eyebrow">CAREER TIMELINE</p>
+<section class="minimal-page about-page" appReveal>
+  <div class="watermark">ABOUT ME.</div>
+  
+  <div class="content-wrapper">
+    <div class="timeline-container">
+      <h2 class="section-title">EXPERIENCE</h2>
+      
+      <div class="cw-timeline">
+        @for (item of items; track item.title) {
+          <div class="cw-node">
+            <div class="cw-dot"></div>
+            <div class="cw-content">
+              <h3 class="role">{{ item.title }}</h3>
+              <p class="desc">{{ item.detail }}</p>
+            </div>
+          </div>
+        }
+      </div>
 
-  <div class="timeline-list">
-    @for (item of items; track item.title) {
-      <article class="timeline-item" appReveal [revealDelay]="80 + ($index * 60)">
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.detail }}</p>
-      </article>
-    }
+    </div>
   </div>
 </section>

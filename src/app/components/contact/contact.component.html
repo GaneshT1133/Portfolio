@@ -1,10 +1,24 @@
-<footer class="contact section" id="contact" appReveal>
-  <h2>{{ content.heading }}</h2>
-  <p>
-    <a [href]="'mailto:' + content.email">{{ content.email }}</a>
-    <span>|</span>
-    <a [href]="content.linkedinUrl" target="_blank" rel="noopener">{{ content.linkedinLabel }}</a>
-    <span>|</span>
-    <a [href]="'tel:' + content.phone">{{ content.phone }}</a>
-  </p>
-</footer>
+<section class="minimal-page contact-page" appReveal>
+  <div class="watermark">CONTACT.</div>
+  
+  <div class="content-wrapper contact-wrapper" style="max-width: 600px; margin: 0 auto; width: 100%;">
+    <h2 class="section-title" style="text-align: center; margin-bottom: 1rem;">SAY HELLO</h2>
+    <p class="contact-desc" style="text-align: center;">
+      Want to discuss system architecture, scalable arrays, or just feeling social? 
+      Drop an email or fill out the form below.
+    </p>
+
+    <form class="cw-form" (submit)="$event.preventDefault()">
+      <div class="input-group">
+        <input type="text" placeholder="Name" required />
+      </div>
+      <div class="input-group">
+        <input type="email" placeholder="Email Address" required />
+      </div>
+      <div class="input-group">
+        <textarea rows="4" placeholder="How can I help you?" required></textarea>
+      </div>
+      <button type="submit" class="cw-btn">Send Message <span class="arrow">&rarr;</span></button>
+    </form>
+  </div>
+</section>

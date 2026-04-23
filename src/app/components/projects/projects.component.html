@@ -1,15 +1,29 @@
-<section class="projects section" id="projects" appReveal>
-  <p class="eyebrow">FEATURED PROJECTS</p>
-  <h2>Focused case studies, clear outcomes</h2>
+<section class="minimal-page projects-page" appReveal>
+  <div class="watermark">PROJECTS.</div>
+  
+  <div class="content-wrapper" style="max-width: 1200px;">
+    <h2 class="section-title" style="margin-bottom: 4rem;">SELECTED WORKS</h2>
 
-  <div class="project-grid">
-    @for (project of items; track project.name) {
-      <article class="project-card" appReveal [revealDelay]="100 + ($index * 90)">
-        <h3>{{ project.name }}</h3>
-        <p class="stack">{{ project.stack }}</p>
-        <p class="summary">{{ project.summary }}</p>
-        <p class="impact">{{ project.impact }}</p>
-      </article>
-    }
+    <div class="cw-grid">
+      @for (item of items; track item.name) {
+        <div class="cw-card">
+          <div class="card-image-box" style="padding: 2rem; display: flex; flex-direction: column; justify-content: center;">
+            <h3 style="font-size: 2.2rem; color: #fff; margin:0;">{{ item.name }}</h3>
+            <p style="color: #ff478e; font-family: monospace; font-size: 1.1rem; margin-top: 0.5rem;">[{{ item.stack }}]</p>
+            
+            <div class="card-overlay">
+              <a class="view-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </div>
+          
+          <div class="card-info">
+            <p class="card-desc" style="color: #fff; font-weight: 500;">{{ item.summary }}</p>
+            <p class="card-desc">{{ item.impact }}</p>
+          </div>
+        </div>
+      }
+    </div>
   </div>
 </section>

@@ -1,39 +1,99 @@
-.timeline {
-  margin-top: 4rem;
+.minimal-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 15vh 15vw 10vh 10vw;
+  color: #fff;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
 }
 
-.eyebrow {
+.watermark {
+  position: fixed;
+  bottom: -5vh;
+  left: -2vw;
+  font-size: clamp(8rem, 20vw, 25rem);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  z-index: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  letter-spacing: -0.05em;
+  user-select: none;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+
+.cw-timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: 10px;
+  border-left: 1px solid rgba(255,255,255,0.1);
+  padding-left: 3rem;
+}
+
+.cw-node {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.cw-dot {
+  position: absolute;
+  left: calc(-3rem - 6px); /* exact center of border */
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background: transparent;
+  border: 2px solid #ce7afd;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(206,122,253,0.6);
+  z-index: 2;
+}
+
+.cw-content .role {
+  font-size: 1.8rem;
+  margin: 0 0 0.5rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+.cw-content .org {
+  font-size: 1rem;
+  color: #ff478e;
+  font-weight: 600;
   margin: 0 0 1rem;
-  color: #0d78c5;
-  font-size: 0.95rem;
-  letter-spacing: 0.07em;
+  font-family: monospace;
 }
 
-.timeline-list {
-  display: grid;
-  gap: 1rem;
+.cw-content .duration {
+  color: #666;
+  font-weight: 400;
 }
 
-.timeline-item {
-  border-radius: 1rem;
-  border: 1px solid var(--color-border);
-  background: rgba(255, 255, 255, 0.95);
-  padding: 1.25rem;
-  transition: transform 220ms ease, box-shadow 220ms ease;
-}
-
-.timeline-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 28px rgba(118, 156, 192, 0.15);
-}
-
-h3 {
+.cw-content .desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #999;
+  max-width: 65ch;
   margin: 0;
-  color: #122d43;
 }
 
-p {
-  margin: 0.45rem 0 0;
-  color: #4f6d87;
+@media (max-width: 768px) {
+  .minimal-page {
+    padding: 12vh 2rem 10vh 2rem;
+  }
 }
-
