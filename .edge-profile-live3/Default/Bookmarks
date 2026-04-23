@@ -1,0 +1,150 @@
+{
+   "checksum": "aa06fa2d45c4a96f7779d25412d77810",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13383557541265145",
+            "date_last_used": "0",
+            "guid": "6d946fbc-5fa6-45b5-bb5b-5f9a361ec96c",
+            "id": "7",
+            "name": "Overview — Bitbucket",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://bitbucket.org/allconfig-web/workspace/overview/",
+            "visit_count": 0
+         }, {
+            "date_added": "13383846469288885",
+            "date_last_used": "13421221122064278",
+            "guid": "a63d9aa9-faf5-483e-a147-2c51f1c59a4b",
+            "id": "8",
+            "name": "Inbox (8) - gstodkar01@gmail.com - Gmail",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://mail.google.com/mail/u/0/#inbox",
+            "visit_count": 15
+         }, {
+            "date_added": "13383846558678394",
+            "date_last_used": "0",
+            "guid": "07af62b0-65c8-4133-b94b-860b849c09be",
+            "id": "9",
+            "name": "allconfig MoMs - Google Sheets",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://docs.google.com/spreadsheets/d/1Em2JweRUDL8oJAKevG4kxTWs4AjryIypaaTJ2FyDccg/edit?gid=0#gid=0",
+            "visit_count": 0
+         } ],
+         "date_added": "13421409879023497",
+         "date_last_used": "0",
+         "date_modified": "13383846558678394",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Favorites bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [ {
+            "date_added": "13375161017888424",
+            "date_last_used": "0",
+            "guid": "8cbbd563-9a61-4361-8f6d-25942eb50ac3",
+            "id": "10",
+            "name": "Learn Angular - Google Docs",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://docs.google.com/document/d/1H48xleN-ZhY1FXOhq6mVju4BhLcyFAl_ptSm4LC9rFc/edit?tab=t.0#heading=h.1t883xru82d3",
+            "visit_count": 0
+         }, {
+            "date_added": "13375303538384989",
+            "date_last_used": "0",
+            "guid": "4397a068-efb5-4f16-ba0b-1e80ec35636e",
+            "id": "11",
+            "name": "You.com | AI for workplace productivity",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://you.com/?utm_source=Bredfor&utm_medium=LI&utm_campaign=neel&chatMode=user_mode_c79c8cb8-4701-4f58-9ce3-4a06542810d8",
+            "visit_count": 0
+         }, {
+            "date_added": "13375557547475505",
+            "date_last_used": "0",
+            "guid": "d1e53b33-3336-495c-b94c-9758f4218c11",
+            "id": "12",
+            "name": "Cutshort: Making Top Professionals More Successful.",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://cutshort.io/profile/recommended-jobs",
+            "visit_count": 0
+         }, {
+            "date_added": "13382451889835130",
+            "date_last_used": "0",
+            "guid": "2558a7bb-3d8f-42ed-81ed-48fd514b0497",
+            "id": "13",
+            "name": "Agencies Hiring in India - Google Docs",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://docs.google.com/document/d/18c-2Z29HDAT-7MjCJcXfor24SoxVo6k6Yv0Nw6Okifo/edit?tab=t.0",
+            "visit_count": 0
+         }, {
+            "date_added": "13383300958025908",
+            "date_last_used": "0",
+            "guid": "0f2a8503-8272-4fbb-ae68-079cbcd7ac57",
+            "id": "14",
+            "name": "Untitled spreadsheet - Google Sheets",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://docs.google.com/spreadsheets/d/10NvOsKfNw3KyGhRZmc9qYzdy14ANztZuj1DffRyKlYc/edit?gid=0#gid=0",
+            "visit_count": 0
+         }, {
+            "date_added": "13383560482567796",
+            "date_last_used": "0",
+            "guid": "a800143c-f2ce-46f5-b2b2-23206baf45ea",
+            "id": "15",
+            "name": "allconfig-web / backend — Bitbucket",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://bitbucket.org/allconfig-web/backend/src/main/",
+            "visit_count": 0
+         } ],
+         "date_added": "13421409879023497",
+         "date_last_used": "0",
+         "date_modified": "13383560482567796",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13421409879023497",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "workspaces_v2": {
+         "children": [  ],
+         "date_added": "13421409879023497",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "75aa6670-344f-549d-b742-660f029506ab",
+         "id": "5",
+         "name": "Workspaces",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CjEKDgiIgQISCCGxZ66dAQAAEgAqGHVNR2lpWm0wY2tGbTJWa2Q4WGFQTlE9PUgDoAYHEo4BCAMSiQEKHG5qZ0R1ODhlQ3J2WHA4NnBEN2ZIR2NxRnA4OD0SJDAzY2UxNDA3LTU0MTMtNWNiYi04ZDI1LTEyM2I2OGE5MTZmNhgAIAAoADCXm/mvoDI4hKD5r6AyQISg+a+gMkoceXpOQjAxY241NEE3Y1JVMHVUKy9QZ21UdFVvPVoAZQAAAADCPgJgABKtAQgMEqgBChx6YnNmRUVJV3E2dXFpc25YOVpxWEE2bG5rSlE9EiRkMWU1M2IzMy0zMzM2LTQ5NWMtYjk0Yy05NzU4ZjQyMThjMTEYACAAKAAwoay4yNkyOIewuMjZMkCHsLjI2TJKHFlHQ0YwZnJFQUhVaHpHSEVDS0NmSjdlUnBVWT1aHyId2jh0WUJ4NkQybVlNMW55QlY2Tm1Za3pmQzBKMD1lHl7a48I+AmAFEq0BCAsSqAEKHEFuaTBUYm55VGlKUnVxOG8wL2drRTdQQzlzOD0SJDQzOTdhMDY4LWVmYjUtNGYxNi1iYTBiLTFlODBlYzM1NjM2ZRgAIAAoADCgrLjI2TI4zK+4yNkyQMyvuMjZMkocN1pUdnZTc0VsZjZmNUhRNSs2dnVaU0VXTUw4PVofIh20Skp5S2RaMGNjb2R5VjhtVlFqZVlnbHRPeVlVPWWiAG28wj4CYAUSjgEIBRKJAQocd1JCclpMKzZQQTlhdktnak5QN0pYRExjZnZzPRIkMTk2ZjE0MGItYjYxNC01MDAzLWExZWUtNTZkZTExM2I4OWE0GAAgACgAMMOU5+vEMzjPlufrxDNAz5bn68QzShxubXg2NXNRRHZ4SThUZ0VlditBK250dG9TbjQ9WgBlAAAAAMI+AmAAEo4BCAESiQEKHHl4Si82ZnZrZWNyN2twNUVRekI0dFdMcGRiRT0SJDExYTA2YmM4LTRkMzgtNWEyNy04NGU5LWUwOTJkYTVkYjc4YxgAIAAoADCRm/mvoDI4k5/5r6AyQJOf+a+gMkocYVJDV0xnaEY5YjVJbnFLSUR2dUovanZRa0ZjPVoAZQAAAADCPgJgABKsAQgKEqcBChwvTDRwN2ZsUFhiOHp2QWk5M1FpbnFZVFNqYW89EiQ4Y2JiZDU2My05YTYxLTQzNjEtOGY2ZC0yNTk0MmViNTBhYzMYACAAKAAwoqy4yNkyOJ+wuMjZMkCfsLjI2TJKHDMwcGdjTTUyN0FhbTRWNGhvalBaYjZqQzgwbz1aHiIcaHdObmpuRVBNMVVpSTV6SkRkY05aRVRabmpVPWXY+v/bwj4CYAUSrQEIDRKoAQocQXFsRCtIQWwwdU9BT2FiZmpDd1B5V0RZUmljPRIkMjU1OGE3YmItM2Q4Zi00MmVkLTgxZWQtNDhmZDUxNGIwNDk3GAAgACgAMJysuMjZMjjorrjI2TJA6K64yNkyShxXZGhKNUI4bGhSZG1Nc1JEUjJGcDlhNzRocjg9Wh8iHe1JSklyU1pLTm5oMHR5c2Z0YWkrbUVFU29JbHM9Zdj6/9vCPgJgBRKOAQgCEokBChxZY1NUb252RVNQd3FDczRMMmNyVmh2NjhMOTg9EiRkNjAxMjA0Mi05OWNiLTVmZGEtYWUwZS03ZTQ2OWNlNTE5MmMYACAAKAAwkpv5r6AyOM+f+a+gMkDPn/mvoDJKHG9QVmtod0JSYlY2NUtDV1IyK0lPTkhXb091OD1aAGUAAAAAwj4CYAASrQEICRKoAQocdkkxanhBWnM1TFZqS0RmNnZEWERPWWRHOXVRPRIkMDdhZjYyYjAtNjVjOC00MTMzLWI5NGItODYwYjg0OWMwOWJlGAAgASgAMNid1N6NMzjRrrjI2TJAweufzdszShxzeFUyRTZPR2ZFZzl3dk41cklmaUVIaFJNMFE9Wh8iHdxydElUVnl5WlpYT3ZCWmVqYi9VMVl1d1IvUjQ9ZQCoOQbCPgJgBRKtAQgPEqgBChxFbDhybU11YTdnWXZiR3hCdXVEclF3RjdQeTA9EiRhODAwMTQzYy1mMmNlLTQ2ZjUtYjJiMi0yMzIwNmJhZjQ1ZWEYACAAKAAwnqy4yNkyOJ6vuMjZMkCer7jI2TJKHFdpMHRnSjYwb1R4TUVwMEN3ZGdDaDYrRUNrVT1aHyId+2xrb1NITFkwaDkzWUlRU3J0aTJZUVR5QU9ZMD1lIM1nScI+AmAFEq0BCAgSqAEKHGx2T0RjK2w2SXlyMXpuRXgyRVRwb2hnZTdvYz0SJGE2M2Q5YWE5LWZhZjUtNDgzZS1hMTQ3LTJjNTFmMWM1OWE0YhgAIAAoADCg4p7z2jM4tK+4yNkyQLSvuMjZMkocM2ZmcGlMczZCQTBwV01qMkZXVitpdExNdW5JPVofIh24NXpjUlNlc2czQjE2VTVnc3ZLUkh6RURuVTQ0PWVeOChUwj4CYAUSrAEIBxKnAQocK3Nta3Rsd0dWWjlmK0xaMWViVmhBSGpsc2xrPRIkNmQ5NDZmYmMtNWZhNi00NWI1LWJiNWItNWY5YTM2MWVjOTZjGAAgASgAMNed1N6NMzi6rrjI2TJAwOufzdszShxHcTRzQmtLNjRPOEdyYlRua0FiYW1adE1Yb3c9Wh4iHHBKTFhFM05aVnVoa1EyY0pldUY2bkowcXNERT1lIM1nScI+AmAFEq0BCA4SqAEKHHZkdThUVDlMK2JTdUF4eHFXWi93T25oaUtHYz0SJDBmMmE4NTAzLTgyNzItNGZiYi1hZTY4LTA3OWNiY2Q3YWM1NxgAIAAoADCdrLjI2TI4gK+4yNkyQICvuMjZMkocS3FtaVgxV3FJOXBUd2dLejVnZldESHI5eWhjPVofIh32RXc0bHBhNDZHNGlGU3BaZTZ6T1JuSll5OXpjPWUAqDkGwj4CYAUwADgA",
+   "version": 1
+}

@@ -5,6 +5,7 @@ import {
   NavItem,
   ProjectItem,
   SkillCategory,
+  SkillItem,
   TimelineItem
 } from '../models/portfolio.models';
 
@@ -30,29 +31,57 @@ export const HERO_CONTENT: HeroContent = {
 export const SKILL_CATEGORIES: readonly SkillCategory[] = [
   {
     title: 'Front-end',
-    items: ['Angular', 'TypeScript', 'HTML5', 'CSS', 'RxJS']
+    items: [
+      { name: 'Angular',    iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg' },
+      { name: 'TypeScript', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+      { name: 'HTML5',      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+      { name: 'CSS3',       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+      { name: 'RxJS',       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rxjs/rxjs-original.svg' }
+    ]
   },
   {
     title: 'Back-end',
-    items: ['Java', 'Spring Boot', 'Hibernate', 'Spring Data JPA', 'REST APIs', 'Microservices']
-  },
-  {
-    title: 'Communication',
-    items: ['Jira', 'Agile', 'Postman', 'Code Reviews', 'Cross-team Collaboration']
+    items: [
+      { name: 'Java',         iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+      { name: 'Spring Boot',  iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
+      { name: 'Hibernate',    iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-plain.svg' },
+      { name: 'REST APIs',    iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
+      { name: 'Microservices',iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' }
+    ]
   },
   {
     title: 'Deployment',
-    items: ['AWS ECS', 'Lambda', 'SQS', 'Kinesis', 'S3', 'EFS', 'CloudWatch', 'Docker', 'Jenkins CI/CD']
-  },
-  {
-    title: 'Certificate',
-    items: ['AWS Certified Cloud Practitioner']
+    items: [
+      { name: 'AWS',     iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' },
+      { name: 'Docker',  iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+      { name: 'Jenkins', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg' },
+      { name: 'Linux',   iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' }
+    ]
   },
   {
     title: 'Version Control',
-    items: ['Git', 'GitHub']
+    items: [
+      { name: 'Git',    iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+      { name: 'GitHub', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' }
+    ]
+  },
+  {
+    title: 'Communication',
+    items: [
+      { name: 'Jira',    iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg' },
+      { name: 'Postman', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg' },
+      { name: 'VS Code', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
+      { name: 'Figma',   iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' }
+    ]
+  },
+  {
+    title: 'Certificate',
+    items: [
+      { name: 'AWS Cloud Practitioner', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' }
+    ]
   }
 ];
+
 
 export const HIGHLIGHTS: readonly HighlightItem[] = [
   { title: 'Experience', value: '3+ Years' },

@@ -13,9 +13,14 @@ export interface HeroContent {
   readonly secondaryActionUrl: string;
 }
 
+export interface SkillItem {
+  readonly name: string;
+  readonly iconUrl: string;
+}
+
 export interface SkillCategory {
   readonly title: string;
-  readonly items: readonly string[];
+  readonly items: readonly SkillItem[];
 }
 
 export interface HighlightItem {

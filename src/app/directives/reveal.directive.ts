@@ -15,6 +15,7 @@ import {
 export class RevealDirective implements AfterViewInit, OnDestroy {
   private readonly host = inject(ElementRef<HTMLElement>);
   private observer?: IntersectionObserver;
+  private fallbackTimer?: number;
 
   @Input() revealDelay = 0;
 
@@ -26,11 +27,24 @@ export class RevealDirective implements AfterViewInit, OnDestroy {
     return `${this.revealDelay}ms`;
   }
 
+  private show(): void {
+    if (this.isVisible) return;
+
+    // Set the state for Angular bindings (if/when change detection runs)
+    // and also update the DOM directly to avoid relying on zone-patched
+    // IntersectionObserver callbacks.
+    this.isVisible = true;
+    this.host.nativeElement.classList.add('is-visible');
+  }
+
   ngAfterViewInit(): void {
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduceMotion =
+      typeof window !== 'undefined' &&
+      typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (reduceMotion || !('IntersectionObserver' in window)) {
-      this.isVisible = true;
+      this.show();
       return;
     }
 
@@ -38,8 +52,10 @@ export class RevealDirective implements AfterViewInit, OnDestroy {
       (entries) => {
         const [entry] = entries;
         if (entry?.isIntersecting) {
-          this.isVisible = true;
+          this.show();
           this.observer?.disconnect();
+          if (this.fallbackTimer) window.clearTimeout(this.fallbackTimer);
+          this.fallbackTimer = undefined;
         }
       },
       {
@@ -49,10 +65,21 @@ export class RevealDirective implements AfterViewInit, OnDestroy {
     );
 
     this.observer.observe(this.host.nativeElement);
+
+    // Avoid an initial "blank page" feeling by revealing above-the-fold content quickly,
+    // even if the first IntersectionObserver callback is delayed.
+    const rect = this.host.nativeElement.getBoundingClientRect();
+    const viewportHeight = window.innerHeight || 0;
+    const initiallyInView = rect.top < viewportHeight * 0.95 && rect.bottom > viewportHeight * -0.05;
+    if (initiallyInView) {
+      this.fallbackTimer = window.setTimeout(() => this.show(), 140);
+    }
   }
 
   ngOnDestroy(): void {
     this.observer?.disconnect();
+    if (this.fallbackTimer) window.clearTimeout(this.fallbackTimer);
+    this.fallbackTimer = undefined;
   }
 }
 
