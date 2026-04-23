@@ -1,13 +1,48 @@
-<section class="hero section" id="home">
-  <div class="hero-content" appReveal [revealDelay]="70">
-    <p class="eyebrow">{{ content.eyebrow }}</p>
-    <h1>{{ content.headline }}</h1>
-    <p class="subtitle">{{ content.summary }}</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" [href]="content.primaryActionAnchor">{{ content.primaryActionLabel }}</a>
-      <a class="btn btn-secondary" [href]="content.secondaryActionUrl" target="_blank" rel="noopener">
-        {{ content.secondaryActionLabel }}
-      </a>
+<div class="hero-wrap">
+  <section class="hero section" id="home">
+    
+    <!-- Left Side: Typography -->
+    <div class="hero-left" appReveal [revealDelay]="70">
+      <p class="eyebrow">{{ content.eyebrow }}</p>
+      <h1>
+        Hi,<br>
+        I'm Ganesh,<br>
+        <span class="highlight">Web Developer</span>
+      </h1>
+      <p class="subtitle">{{ content.summary }}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" [href]="content.primaryActionAnchor">My Work</a>
+        <a class="btn btn-secondary" [href]="content.secondaryActionUrl" target="_blank" rel="noopener">Hire Me</a>
+      </div>
     </div>
-  </div>
-</section>
+
+    <!-- Right Side: 3D Scene Container -->
+    <div class="hero-right" appReveal [revealDelay]="150">
+      <div class="scene-container" appTilt [tiltMax]="20">
+        
+        <!-- Behind Shape -->
+        <div class="floating-shape float-cube bg-behind"></div>
+
+        <!-- Main Glass Card -->
+        <div class="glass-phone">
+          <div class="notch"></div>
+          <div class="phone-content">
+            <h4>Dark Mode</h4>
+            <p>Background<br>#1A2A49<br>Opacity 1.0</p>
+            <div class="app-widget">
+              <span class="value">25</span>
+            </div>
+            <div class="app-widget">
+              <span class="value">25</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Foreground Shapes -->
+        <div class="floating-shape float-sphere fg-top"></div>
+        <div class="floating-shape float-pyramid fg-bottom"></div>
+      </div>
+    </div>
+
+  </section>
+</div>
