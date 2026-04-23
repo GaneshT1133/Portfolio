@@ -2,6 +2,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { RevealDirective } from '../../directives/reveal.directive';
 import { ContactContent } from '../../models/portfolio.models';
 
+import { CONTACT_CONTENT } from '../../data/portfolio.data';
+
 @Component({
   selector: 'app-contact',
   standalone: true,
@@ -11,6 +13,6 @@ import { ContactContent } from '../../models/portfolio.models';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactComponent {
-  @Input({ required: true }) content!: ContactContent;
+  content = CONTACT_CONTENT;
 }
 

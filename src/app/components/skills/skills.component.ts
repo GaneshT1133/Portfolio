@@ -1,6 +1,8 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SkillCategory } from '../../models/portfolio.models';
 import { RevealDirective } from '../../directives/reveal.directive';
+
+import { SKILL_CATEGORIES } from '../../data/portfolio.data';
 
 @Component({
   selector: 'app-skills',
@@ -11,6 +13,5 @@ import { RevealDirective } from '../../directives/reveal.directive';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkillsComponent {
-  @Input({ required: true }) categories!: readonly SkillCategory[];
+  categories = SKILL_CATEGORIES;
 }
-

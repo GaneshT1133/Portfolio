@@ -1,6 +1,8 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RevealDirective } from '../../directives/reveal.directive';
 import { ProjectItem } from '../../models/portfolio.models';
+
+import { PROJECTS } from '../../data/portfolio.data';
 
 @Component({
   selector: 'app-projects',
@@ -11,6 +13,5 @@ import { ProjectItem } from '../../models/portfolio.models';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectsComponent {
-  @Input({ required: true }) items!: readonly ProjectItem[];
+  items = PROJECTS;
 }
-

@@ -7,6 +7,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { CursorDirective } from './directives/cursor.directive';
+import { RouterOutlet } from '@angular/router';
 import {
   CONTACT_CONTENT,
   HERO_CONTENT,
@@ -28,7 +29,8 @@ import {
     ProjectsComponent,
     TimelineComponent,
     ContactComponent,
-    CursorDirective
+    CursorDirective,
+    RouterOutlet
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

@@ -4,14 +4,7 @@
 
   <app-header [brandName]="brandName" [navItems]="navItems"></app-header>
   
-  <app-hero [content]="heroContent"></app-hero>
-  
-  <!-- "About" section equivalent -->
-  <app-timeline [items]="timeline"></app-timeline>
-  
-  <app-projects [items]="projects"></app-projects>
-  
-  <app-skills [categories]="skillCategories"></app-skills>
-  
-  <app-contact [content]="contact"></app-contact>
+  <div class="route-wrapper">
+    <router-outlet></router-outlet>
+  </div>
 </div>

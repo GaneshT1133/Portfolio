@@ -10,10 +10,9 @@ import {
 } from '../models/portfolio.models';
 
 export const NAV_ITEMS: readonly NavItem[] = [
-  { label: 'Home', anchor: '#home' },
-  { label: 'Skills', anchor: '#skills' },
+  { label: 'About', anchor: '#about' },
   { label: 'Projects', anchor: '#projects' },
-  { label: 'Timeline', anchor: '#timeline' },
+  { label: 'Skills', anchor: '#skills' },
   { label: 'Contact', anchor: '#contact' }
 ];
 

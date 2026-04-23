@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RevealDirective } from '../../directives/reveal.directive';
-import { TimelineItem } from '../../models/portfolio.models';
+import { TIMELINE } from '../../data/portfolio.data';
 
 @Component({
   selector: 'app-timeline',
@@ -11,6 +11,5 @@ import { TimelineItem } from '../../models/portfolio.models';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TimelineComponent {
-  @Input({ required: true }) items!: readonly TimelineItem[];
+  items = TIMELINE;
 }
-
