@@ -1,104 +1,155 @@
 .minimal-valour-wrap {
-  width: 100vw;
-  min-height: 100vh;
-  background-color: #0c0c0c;
-  color: #fff;
-  margin-top: -80px; /* pull up behind nav */
-  padding-top: calc(85px + 8vh); /* Push down content below nav */
-  position: relative;
-  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  padding-left: 10vw;
-  padding-right: 10vw;
+  justify-content: flex-start;
+  color: #fff;
+  background-color: transparent;
+  padding: 0 10vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-watermark {
+  position: absolute;
+  bottom: -5vh;
+  left: -2vw;
+  font-size: clamp(15rem, 35vw, 40rem);
+  font-family: var(--font-primary);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  z-index: 0;
+  pointer-events: none;
+  line-height: 0.8;
+  letter-spacing: -0.05em;
 }
 
 .minimal-hero {
-  max-width: 900px;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  z-index: 2;
-}
-
-/* ── Heading (CodeWonders Large Glitch Style) ── */
-.hero-name-glitch h1 {
-  font-size: clamp(3rem, 8vw, 6.5rem);
-  font-weight: 900;
-  line-height: 1;
-  margin: 0;
-  letter-spacing: -0.04em;
-  color: #ffffff;
   position: relative;
-  text-transform: uppercase;
+  z-index: 2;
+  max-width: 900px;
+  width: 100%;
+  margin-top: -2vh;
 }
 
-/* ── Paragraph Block ── */
-.hero-content-block {
-  max-width: 68ch;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+.hero-name-glitch {
+  margin-bottom: 1rem;
+  padding-top: 10px;
+  position: relative;
+  display: inline-block;
 }
 
-.hero-content-block p {
-  color: #999999;
-  font-size: clamp(1rem, 1.8vw, 1.25rem);
-  line-height: 1.7;
-  letter-spacing: 0.01em;
+.hero-title {
+  font-family: var(--font-primary);
+  font-size: clamp(2.5rem, 5.5vw, 5.5rem);
+  font-weight: 900;
+  color: #fff;
   margin: 0;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-shadow: 
+    3px 3px 0 rgba(255, 71, 142, 0.8),
+    -3px -3px 0 rgba(71, 196, 255, 0.8);
 }
 
-.hero-content-block strong {
-  color: #ffffff;
+.hero-content-block {
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #a0a0a0;
+  font-weight: 400;
+  max-width: 800px;
+}
+
+.keyword-link {
+  color: #fff;
   font-weight: 600;
+  cursor: pointer;
+  position: relative;
   transition: color 0.3s ease;
 }
 
-/* Subtle highlight loop if hovered */
-.hero-content-block:hover strong {
+.keyword-link:hover {
   color: #ce7afd;
 }
 
-/* ── Social Dock ── */
-.social-dock {
-  display: flex;
-  gap: 2rem;
-  margin-top: 1rem;
+.hero-content-block p {
+  margin-bottom: 1rem;
 }
 
-.social-icon {
-  width: 24px;
-  height: 24px;
-  color: #666666;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.hero-icon-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.see-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+  z-index: 10;
+}
+
+.see-more-btn:hover {
+  color: #ce7afd;
+}
+
+.arrow-right {
+  font-size: 1.5rem;
+  font-family: monospace;
+  transition: transform 0.3s ease;
+}
+
+.see-more-btn:hover .arrow-right {
+  transform: translateX(10px);
+}
+
+.horizontal-socials {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 10;
+  position: relative;
+}
+
+.horizontal-socials a {
+  color: #888;
+  transition: all 0.3s ease;
+  width: 18px;
+  height: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.social-icon:hover {
-  color: #ffffff;
-  transform: translateY(-4px) scale(1.1);
-  filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.3));
-}
-
-.social-icon svg {
+.horizontal-socials a svg {
   width: 100%;
   height: 100%;
 }
 
-/* ── Responsive ── */
+.horizontal-socials a:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 1024px) {
+  .minimal-valour-wrap { padding: 0 5vw; }
+  .hero-content-block { font-size: 1.05rem; }
+}
+
 @media (max-width: 768px) {
-  .minimal-valour-wrap {
-    padding-top: 120px;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    align-items: flex-start;
-  }
-  
-  .social-dock {
-    gap: 1.5rem;
-  }
+  .minimal-valour-wrap { padding: 0 2rem; }
+  .hero-title { font-size: 2.5rem; text-shadow: 2px 2px 0 rgba(255, 71, 142, 0.8), -2px -2px 0 rgba(71, 196, 255, 0.8); }
+  .hero-content-block { font-size: 1rem; }
 }

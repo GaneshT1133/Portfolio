@@ -1,14 +1,7 @@
-<div class="page" appCursor style="display: flex; flex-direction: column; width: 100vw; height: 100vh; overflow: hidden;">
+<div class="page" appCursor>
   <app-header [brandName]="brandName" [navItems]="navItems"></app-header>
   
-  <div class="route-wrapper" style="flex: 1; overflow-y: auto; overflow-x: hidden; position: relative;">
+  <div class="route-wrapper" [class.no-scroll]="isLockedPage$ | async">
     <router-outlet></router-outlet>
-  </div>
-
-  <div class="global-socials">
-    <a href="https://linkedin.com/in/ganeshtodkar" target="_blank" aria-label="LinkedIn">LN</a>
-    <a href="https://github.com/GaneshT1133" target="_blank" aria-label="GitHub">GH</a>
-    <a href="mailto:ganeshtodkar9552@gmail.com" aria-label="Email">EM</a>
-    <a href="tel:+917507309552" aria-label="Phone">PH</a>
   </div>
 </div>

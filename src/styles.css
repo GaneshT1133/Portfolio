@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Archivo+Black&family=Outfit:wght@400;600;700;800;900&display=swap');
+
 :root {
-  --color-text: #17314a;
-  --color-border: #d6e2ed;
+  --color-text: #fff;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --font-primary: 'Archivo Black', sans-serif;
+  --font-secondary: 'Inter', -apple-system, sans-serif;
+  --bg-color: #000000;
 }
 
 * {
@@ -19,24 +24,59 @@ html {
 
 body {
   margin: 0;
-  font-family:
-    'Inter',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
-  color: #fff;
-  background-color: #0b0b0b;
+  padding: 0;
+  font-family: var(--font-secondary);
+  background-color: var(--bg-color);
+  color: var(--color-text);
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
   background-size: 50px 50px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden; /* No native scroll as requested */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+body.light-theme {
+  --bg-color: #f0f0f0;
+  --color-text: #111111;
+  --color-border: rgba(0, 0, 0, 0.1);
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+body.light-theme ::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+body.light-theme .hero-title, body.light-theme .section-title {
+  color: #111;
+}
+
+body.light-theme .watermark {
+  color: rgba(0, 0, 0, 0.03);
+}
+
+body.light-theme .minimal-hero a, body.light-theme .minimal-page a, body.light-theme .cw-content .role {
+  color: #111;
 }
 
 .section {
@@ -51,6 +91,34 @@ body {
   width: 100vw;
   overflow-y: auto;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.route-wrapper.no-scroll {
+  overflow: hidden !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+}
+
+/* Custom Scrollbar Improvements */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+  border: 2px solid #050505;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ce7afd;
 }
 
 [appReveal] {

@@ -1,22 +1,48 @@
 <section class="minimal-page about-page" appReveal>
   <div class="watermark">ABOUT ME.</div>
   
-  <div class="content-wrapper">
-    <div class="timeline-container">
-      <h2 class="section-title">EXPERIENCE</h2>
-      
-      <div class="cw-timeline">
-        @for (item of items; track item.title) {
-          <div class="cw-node">
-            <div class="cw-dot"></div>
-            <div class="cw-content">
-              <h3 class="role">{{ item.title }}</h3>
-              <p class="desc">{{ item.detail }}</p>
-            </div>
+  <div class="content-wrapper cw-about-layout">
+    <div class="about-grid">
+      <div class="about-image-container" appReveal [revealDelay]="100">
+        <img src="profile.jpg?v=2" alt="Ganesh Todkar" class="profile-photo">
+
+        <div class="timeline-container" appReveal [revealDelay]="500">
+          <h3 class="experience-title">Experience.</h3>
+          <div class="cw-timeline">
+            @for (item of items; track item.title) {
+              <div class="cw-node">
+                <div class="cw-dot"></div>
+                <div class="cw-content">
+                  <h4 class="role">{{ item.title }}</h4>
+                  <p class="desc">{{ item.detail }}</p>
+                </div>
+              </div>
+            }
           </div>
-        }
+        </div>
       </div>
 
+      <div class="about-text-container">
+        <h2 class="section-title" appReveal>About.</h2>
+        <div class="about-bio-group" appReveal [revealDelay]="200">
+          <p class="about-bio">
+            I’m a <strong>Java Full-Stack Developer</strong> with 3+ years of experience building scalable backend systems and production-grade applications. I specialize in <strong>Spring Boot</strong>, <strong>microservices architecture</strong>, and <strong>cloud-based solutions</strong>, focusing on performance, reliability, and clean system design.
+          </p>
+          <p class="about-bio">
+            I’ve worked with organizations like <strong>NICE</strong> and <strong>Wipro</strong>, where I contributed to developing and maintaining distributed systems, integrating third-party services, and resolving critical production issues. My work involved building REST APIs, optimizing backend performance, and ensuring system stability in real-world environments.
+          </p>
+          <p class="about-bio">
+            I enjoy solving complex problems and designing systems that are simple, efficient, and scalable. I strongly believe in writing clean, maintainable code and continuously improving through hands-on learning and real-world challenges.
+          </p>
+        </div>
+
+        <div class="about-actions" appReveal [revealDelay]="400">
+          <a href="Ganesh_Todkar_Resume.pdf" download="Ganesh_Todkar_Resume.pdf" class="cw-btn download-btn">
+            Download CV
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 10px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

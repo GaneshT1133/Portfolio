@@ -1,25 +1,23 @@
-<section class="skills-wrap" id="skills">
-  <div class="skills section">
-    <div class="skills-title" appReveal>
-      <p><span class="title-icon">🔗</span> SKILLS</p>
-      <div class="title-line"></div>
-    </div>
-
+<div class="minimal-page">
+  <div class="watermark" aria-hidden="true">Skills.</div>
+  
+  <div class="content-wrapper">
+    <h2 class="section-title" appReveal>Technical Arsenal.</h2>
+    
     <div class="skills-grid">
       @for (category of categories; track category.title) {
-        <article class="skill-card" appReveal [revealDelay]="100 + ($index * 70)">
-          <h3>{{ category.title }}</h3>
-          <hr class="card-divider" />
-          <div class="logo-grid">
+        <div class="skill-category" appReveal [revealDelay]="100 + ($index * 70)">
+          <h3 class="category-title">{{ category.title }}</h3>
+          <div class="skill-items">
             @for (skill of category.items; track skill.name) {
-              <div class="logo-item">
-                <img [src]="skill.iconUrl" [alt]="skill.name" loading="lazy" />
-                <span>{{ skill.name }}</span>
+              <div class="skill-pill">
+                <img [src]="skill.iconUrl" [alt]="skill.name" loading="lazy" class="skill-icon" />
+                <span class="skill-name">{{ skill.name }}</span>
               </div>
             }
           </div>
-        </article>
+        </div>
       }
     </div>
   </div>
-</section>
+</div>

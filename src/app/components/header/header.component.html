@@ -1,5 +1,9 @@
 <header class="top-nav section" appReveal>
-  <p class="brand">{{ brandName }}</p>
+  <a routerLink="/" class="brand-logo" aria-label="Home">
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
+      <path d="M20 5V35M5 20H35M9.3934 9.3934L30.6066 30.6066M30.6066 9.3934L9.3934 30.6066" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
   <nav aria-label="Main">
     <ul>
       @for (item of navItems; track item.label) {
@@ -7,6 +11,15 @@
           <a [routerLink]="'/' + item.label.toLowerCase()" routerLinkActive="active">{{ item.label }}</a>
         </li>
       }
+      <li>
+        <button class="theme-toggle" aria-label="Toggle dark mode" (click)="toggleTheme()">
+          @if (isDarkMode) {
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          } @else {
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          }
+        </button>
+      </li>
     </ul>
   </nav>
 </header>

@@ -1,122 +1,116 @@
-.skills-wrap {
-  margin-top: 3.25rem;
-  background: #f0c419;
-  padding: 3.5rem 0 4rem;
-}
-
-/* ── Title ─────────────────────────────────────────── */
-.skills-title {
-  text-align: center;
-}
-
-.skills-title p {
-  margin: 0;
-  font-size: clamp(2rem, 3.5vw, 2.9rem);
-  font-weight: 900;
-  letter-spacing: 0.05em;
-  color: #1a2027;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-}
-
-.title-icon {
-  font-size: 0.85em;
-}
-
-.title-line {
-  width: 7.5rem;
-  height: 2px;
-  margin: 0.6rem auto 0;
-  background: rgba(26, 32, 39, 0.4);
-}
-
-/* ── Grid ── */
-.skills-grid {
-  margin-top: 2.2rem;
-  column-count: 3;
-  column-gap: 1.2rem;
-}
-
-/* ── Cards ── */
-.skill-card {
-  break-inside: avoid;
-  margin-bottom: 1.2rem;
-  border-radius: 1rem;
-  background: #ffffff;
-  padding: 1.1rem 1.25rem 1.4rem;
-  box-shadow: 0 10px 28px rgba(107, 89, 9, 0.22);
-  transition: transform 220ms ease, box-shadow 220ms ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 34px rgba(92, 76, 8, 0.28);
-}
-
-h3 {
-  margin: 0;
-  color: #e05a2b;
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-}
-
-.card-divider {
-  border: none;
-  border-top: 1px solid #e7ebf0;
-  margin: 0.65rem 0 1rem;
-}
-
-/* ── Logo grid ────────────────────────────────────── */
-.logo-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 0.8rem;
-}
-
-.logo-item {
+.minimal-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 10vh 15vw 10vh 15vw;
+  color: #fff;
+  background: transparent;
   display: flex;
   flex-direction: column;
+}
+
+.watermark {
+  position: fixed;
+  bottom: -5vh;
+  left: -2vw;
+  font-size: clamp(8rem, 20vw, 25rem);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  z-index: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  letter-spacing: -0.05em;
+  user-select: none;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.skill-category {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-category:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+.category-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ce7afd;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skill-pill {
+  display: flex;
   align-items: center;
-  gap: 0.35rem;
-  width: 70px;
+  gap: 0.6rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
-.logo-item img {
-  width: 52px;
-  height: 52px;
+.skill-pill:hover {
+  border-color: rgba(206, 122, 253, 0.5);
+  background: rgba(206, 122, 253, 0.05);
+  transform: translateY(-2px);
+}
+
+.skill-icon {
+  width: 20px;
+  height: 20px;
   object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
-  transition: transform 200ms ease;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
-.logo-item:hover img {
-  transform: scale(1.12);
+.skill-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e2e8f0;
 }
 
-.logo-item span {
-  font-size: 0.68rem;
-  font-weight: 600;
-  color: #293845;
-  text-align: center;
-  line-height: 1.2;
-}
-
-/* ── Responsive ── */
-@media (max-width: 1080px) {
-  .skills-grid {
-    column-count: 2;
+@media (max-width: 768px) {
+  .minimal-page {
+    padding: 12vh 2rem 10vh 2rem;
   }
-}
-
-@media (max-width: 680px) {
+  
   .skills-grid {
-    column-count: 1;
-  }
-
-  .skills-wrap {
-    padding: 2.4rem 0 3rem;
+    grid-template-columns: 1fr;
   }
 }

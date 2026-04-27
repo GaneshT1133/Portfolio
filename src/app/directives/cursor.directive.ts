@@ -9,12 +9,13 @@ export class CursorDirective implements AfterViewInit, OnDestroy {
   private cursorDot!: HTMLElement;
   private cursorOutline!: HTMLElement;
   
-  // To handle requestAnimationFrame cleanly
-  private mouseX = 0;
-  private mouseY = 0;
-  private outlineX = 0;
-  private outlineY = 0;
+  private mouseX = -100;
+  private mouseY = -100;
+  private outlineX = -100;
+  private outlineY = -100;
   private animationFrameId: number = 0;
+  private observer: MutationObserver | null = null;
+  private hasMoved = false;
 
   constructor(
     private el: ElementRef, 
@@ -26,6 +27,7 @@ export class CursorDirective implements AfterViewInit, OnDestroy {
       this.createCursorElements();
       this.animateCursor();
       this.addHoverListeners();
+      this.setupObserver();
     }
   }
 
@@ -33,10 +35,12 @@ export class CursorDirective implements AfterViewInit, OnDestroy {
     if (this.animationFrameId) {
       cancelAnimationFrame(this.animationFrameId);
     }
+    if (this.observer) {
+      this.observer.disconnect();
+    }
   }
 
   private createCursorElements() {
-    // Hide default cursor across entire body cleanly
     document.body.style.cursor = 'none';
 
     this.cursorDot = document.createElement('div');
@@ -45,15 +49,17 @@ export class CursorDirective implements AfterViewInit, OnDestroy {
     this.cursorOutline = document.createElement('div');
     this.cursorOutline.className = 'custom-cursor-outline';
 
+    this.cursorDot.style.opacity = '0';
+    this.cursorOutline.style.opacity = '0';
+
     document.body.appendChild(this.cursorDot);
     document.body.appendChild(this.cursorOutline);
 
-    // Initial styles
     const styles = `
       .custom-cursor-dot {
         width: 8px;
         height: 8px;
-        background-color: #ff478e;
+        background-color: #fff;
         border-radius: 50%;
         position: fixed;
         top: 0;
@@ -61,11 +67,13 @@ export class CursorDirective implements AfterViewInit, OnDestroy {
         transform: translate(-50%, -50%);
         z-index: 9999;
         pointer-events: none;
+        mix-blend-mode: difference;
+        transition: opacity 0.3s ease;
       }
       .custom-cursor-outline {
         width: 40px;
         height: 40px;
-        border: 2px solid rgba(255, 71, 142, 0.5);
+        border: 1.5px solid rgba(255, 255, 255, 0.4);
         border-radius: 50%;
         position: fixed;
         top: 0;
@@ -73,16 +81,22 @@ export class CursorDirective implements AfterViewInit, OnDestroy {
         transform: translate(-50%, -50%);
         z-index: 9998;
         pointer-events: none;
-        transition: width 0.2s, height 0.2s, background-color 0.2s;
+        transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s, opacity 0.3s ease;
+        mix-blend-mode: difference;
       }
       .custom-cursor-outline.hovering {
         width: 60px;
         height: 60px;
-        background-color: rgba(255, 71, 142, 0.1);
-        border-color: rgba(255, 71, 142, 0.1);
+        background-color: #fff;
+        border-color: #fff;
       }
-      /* Ensure nothing interactive flashes default cursor if we can help it */
-      a, button, input, [appTilt] {
+      .custom-cursor-outline.scrolling {
+        border-color: #ce7afd;
+        border-width: 3px;
+        width: 30px;
+        height: 30px;
+      }
+      a, button, input, textarea, [routerLink], .keyword-link, .view-btn, .cw-btn {
         cursor: none !important;
       }
     `;
@@ -93,16 +107,21 @@ export class CursorDirective implements AfterViewInit, OnDestroy {
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: MouseEvent) {
+    if (!this.hasMoved) {
+      this.hasMoved = true;
+      this.cursorDot.style.opacity = '1';
+      this.cursorOutline.style.opacity = '1';
+      this.outlineX = e.clientX;
+      this.outlineY = e.clientY;
+    }
     this.mouseX = e.clientX;
     this.mouseY = e.clientY;
     
-    // Dot perfectly tracks mouse
     this.cursorDot.style.left = `${this.mouseX}px`;
     this.cursorDot.style.top = `${this.mouseY}px`;
   }
 
   private animateCursor = () => {
-    // Lerp (linear interpolation) for trailing effect on the outline ring
     this.outlineX += (this.mouseX - this.outlineX) * 0.15;
     this.outlineY += (this.mouseY - this.outlineY) * 0.15;
 
@@ -113,14 +132,30 @@ export class CursorDirective implements AfterViewInit, OnDestroy {
   }
 
   private addHoverListeners() {
-    const interactables = document.querySelectorAll('a, button, [appTilt]');
+    const interactables = document.querySelectorAll('a, button, input, textarea, [routerLink], .keyword-link, .view-btn, .cw-btn, .nav-link');
     interactables.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        this.cursorOutline.classList.add('hovering');
-      });
-      el.addEventListener('mouseleave', () => {
-        this.cursorOutline.classList.remove('hovering');
-      });
+      if (!(el as any)._cursorAttached) {
+        (el as any)._cursorAttached = true;
+        el.addEventListener('mouseenter', () => this.cursorOutline.classList.add('hovering'));
+        el.addEventListener('mouseleave', () => this.cursorOutline.classList.remove('hovering'));
+      }
     });
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    // Optional: add a scrolling class to the cursor if needed
+    this.cursorOutline.classList.add('scrolling');
+    clearTimeout((this as any).scrollTimeout);
+    (this as any).scrollTimeout = setTimeout(() => {
+      this.cursorOutline.classList.remove('scrolling');
+    }, 150);
+  }
+
+  private setupObserver() {
+    this.observer = new MutationObserver(() => {
+      this.addHoverListeners();
+    });
+    this.observer.observe(document.body, { childList: true, subtree: true });
   }
 }

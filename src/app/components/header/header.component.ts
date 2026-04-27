@@ -14,5 +14,12 @@ import { RevealDirective } from '../../directives/reveal.directive';
 export class HeaderComponent {
   @Input({ required: true }) brandName!: string;
   @Input({ required: true }) navItems!: readonly NavItem[];
+
+  isDarkMode = true;
+
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+    document.body.classList.toggle('light-theme');
+  }
 }
 
